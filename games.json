@@ -1,0 +1,11 @@
+{ "games": [{
+  "character": "Miss Scarlet",
+  "answer": { "who": "Professor Plum", "where": "Library", "how": "candlestick"},
+  "guesses": [],
+  "win": false,
+  "score": 0,
+  "rooms": ["Kitchen", "Ballroom", "Conservatory", "Dining Room", "Cellar", "Billard Room", "Library", "Lounge", "Hall", "Study"],
+  "people": ["Miss Scarlet", "Professor Plum", "Mrs. Peacock", "Mr. Green", "Colonel Mustard", "Mrs. White"],
+  "weapons": ["candlestick", "dagger", "lead pipe", "revolver", "rope", "wrench"]
+  }]
+}
