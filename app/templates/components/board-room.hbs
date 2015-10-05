@@ -1,21 +1,3 @@
-{{#if (eq inRoom false)}}
-  {{#each model.rooms as |room|}}
-    <button class="btn btn-default" {{action 'enterRoom' room}}>{{room}}</button>
-  {{/each}}
-{{else}}
-  {{#each model.rooms as |room|}}
-    {{#if (eq inRoom room)}}
-      <h3>You're in the {{room}}</h3>
-      <h4>Guess:</h4>
-      <form>
-        <label>It was</label>
-        {{input value=person id='who'}}
-        <label>in the {{room}} </label>
-        <label>with the</label>
-        {{input value=weapon id='how'}}
-        <button class="btn btn-default">Accuse</button>
-      </form>
-      <button class="btn btn-default" {{action 'leaveRoom'}}>Leave Room</button>
-    {{/if}}
-  {{/each}}
-{{/if}}
+{{#each model.rooms as |room|}}
+    {{make-guess model=model room=room makeGuess='makeGuess'}}
+{{/each}}
