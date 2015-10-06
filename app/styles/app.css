@@ -13,7 +13,7 @@ body {
   padding: 5px;
   height: 150px;
 }
-.choose-character-container:hover {
+#large-hover:hover {
   padding: 0;
   height: 170px;
 }

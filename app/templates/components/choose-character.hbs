@@ -1,6 +1,6 @@
 <h3>Choose a character:</h3>
 {{#each model.suspects as |suspect|}}
-<div class="choose-character-container col-xs-2">
+<div id="large-hover" class="choose-character-container col-xs-2">
  <div {{action 'newGame' suspect}} class="choose-character" style="background-image: url({{suspect.image}});">
  </div>
 </div>

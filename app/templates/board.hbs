@@ -1,12 +1,16 @@
 <br>
 <br>
-<!-- <div class="choose-character-container col-xs-2">
-  <div class="choose-character" style="background-image: url({{model.character.image}});">
-  </div>
-</div> -->
-<h1>Good evening, {{model.character}}</h1>
+{{#each model.suspects as |suspect|}}
+  {{#if (eq suspect.name model.game.character)}}
+    <div class="choose-character-container col-xs-2">
+      <div class="choose-character" style="background-image: url({{suspect.image}});">
+      </div>
+    </div>
+  {{/if}}
+{{/each}}
+<h1>Good evening, {{model.game.character}}</h1>
 
-<h5>(It was {{model.answer.who}} in the {{model.answer.where}} with the {{model.answer.how}}.)</h5>
+<h5>(It was {{model.game.answer.who}} in the {{model.game.answer.where}} with the {{model.game.answer.how}}.)</h5>
 
 <!-- {{board-room model=model makeGuess='makeGuess'}}
 
