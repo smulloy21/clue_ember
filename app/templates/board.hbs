@@ -12,10 +12,16 @@
 
 <h5>(It was {{model.game.answer.who}} in the {{model.game.answer.where}} with the {{model.game.answer.how}}.)</h5>
 
-<!-- {{board-room model=model makeGuess='makeGuess'}}
+
+{{#each model.rooms as |room|}}
+<button class="btn btn-default" {{action 'enterRoom' room model.game}}>{{room.name}}</button>
+{{/each}}
+
+<!--
+{{board-room model=model makeGuess='makeGuess'}}
 
 
 <h5>So far you've guessed:</h5>
-{{#each model.guesses as |guess|}}
+{{#each model.game.guesses as |guess|}}
 <h6>{{guess.who}} in the {{guess.where}} with the {{guess.how}}.</h6>
 {{/each}} -->

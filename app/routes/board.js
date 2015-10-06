@@ -9,6 +9,11 @@ export default Ember.Route.extend({
       weapons: this.store.findAll('weapon'),
     });
   },
+  actions: {
+    enterRoom(room, game) {
+      this.transitionTo('room', game.id, room.id);
+    }
+  }
   // actions: {
   //   makeGuess(params) {
   //     console.log('made it to the route');
