@@ -1,32 +1,22 @@
-{{#if inRoom}}
-  <h3>{{room}}</h3>
-  {{#if guessForm}}
-    <h4>Guess:</h4>
-    <form>
-      <label>It was</label>
-      {{#x-select class="form-control" value=who id="who"}}
-        {{#x-option disabled}}Choose suspect{{/x-option}}
-         {{#each model.people as |suspect|}}
-           {{#x-option value=suspect}}{{suspect}}{{/x-option}}
-         {{/each}}
-       {{/x-select}}
-      <label>in the</label>
-      {{#x-select class="form-control" value=where id="where"}}
-        {{#x-option value=room}}{{room}}{{/x-option}}
-      {{/x-select}}
-      <label>with the</label>
-      {{#x-select class="form-control" value=how id="how"}}
-        {{#x-option disabled}}Choose weapon{{/x-option}}
-         {{#each model.weapons as |weapon|}}
-           {{#x-option value=weapon}}{{weapon}}{{/x-option}}
-         {{/each}}
-       {{/x-select}}
-      <button class="btn btn-default" {{action 'makeGuess'}}>Accuse</button>
-    </form>
-  {{else}}
-  <button class="btn btn-default" {{action 'showGuessForm'}}>Make a Guess</button>
-  {{/if}}
-  <button class="btn btn-default" {{action 'leaveRoom'}}>Leave Room</button>
-{{else}}
-  <button class="btn btn-default" {{action 'enterRoom'}}>{{room}}</button>
-{{/if}}
+<h4>Guess:</h4>
+<form>
+  <label>It was</label>
+  {{#x-select class="form-control" value=who id="who"}}
+    {{#x-option disabled}}Choose suspect{{/x-option}}
+     {{#each model.suspects as |suspect|}}
+       {{#x-option value=suspect.name}}{{suspect.name}}{{/x-option}}
+     {{/each}}
+   {{/x-select}}
+  <label>in the</label>
+  {{#x-select class="form-control" value=where id="where"}}
+    {{#x-option value=model.room.name}}{{model.room.name}}{{/x-option}}
+  {{/x-select}}
+  <label>with the</label>
+  {{#x-select class="form-control" value=how id="how"}}
+    {{#x-option disabled}}Choose weapon{{/x-option}}
+     {{#each model.weapons as |weapon|}}
+       {{#x-option value=weapon.name}}{{weapon.name}}{{/x-option}}
+     {{/each}}
+   {{/x-select}}
+  <button class="btn btn-default" {{action 'makeGuess'}}>Accuse</button>
+</form>
