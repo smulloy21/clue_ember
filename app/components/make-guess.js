@@ -12,15 +12,17 @@ export default Ember.Component.extend({
         game: this.get('model.game')
       };
       var answer = params.game.get('answer');
-      if (params.who == answer.who && params.where == answer.where && params.how == answer.how) {
-        this.set('message', "You won.");
-      } else if (params.who == answer.who && params.where == answer.where || params.where == answer.where && params.how == answer.how || params.who == answer.who && params.how == answer.how) {
-        this.set('message', "You got two things correct.");
-      } else if (params.who == answer.who || params.where == answer.where || params.how == answer.how) {
-        this.set('message', "You got one thing correct.");
+      var wrong = [];
+      if (params.who !== answer.who) { wrong.push(params.who)}
+      if (params.how !== answer.how) {wrong.push(params.how)}
+      if (params.where !== answer.where) {wrong.push(params.where)}
+      if (wrong.length > 0) {
+        // clue = wrong[random.w]
+        this.set("message", "You got " +wrong.length+ " wrong.");
       } else {
-        this.set('message', "You got nothing correct.");
+        this.set("message", "You win!");
       }
+      debugger;
       this.set('guessForm', false);
       this.sendAction('makeGuess', params);
     },

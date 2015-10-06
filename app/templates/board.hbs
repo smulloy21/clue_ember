@@ -10,15 +10,15 @@
 {{/each}}
 <h1>Good evening, {{model.game.character}}</h1>
 
-<h5>(It was {{model.game.answer.who}} in the {{model.game.answer.where}} with the {{model.game.answer.how}}.)</h5>
+<!-- <h5>(It was {{model.game.answer.who}} in the {{model.game.answer.where}} with the {{model.game.answer.how}}.)</h5> -->
 
 
 {{#each model.rooms as |room|}}
 <button class="btn btn-default" {{action 'enterRoom' room model.game}}>{{room.name}}</button>
 {{/each}}
 
-<br><br><br>
+<!-- <br><br><br>
 <h5>So far you've guessed:</h5>
 {{#each model.game.guesses as |guess|}}
 <h6>{{guess.who}} in the {{guess.where}} with the {{guess.how}}.</h6>
-{{/each}}
+{{/each}} -->
