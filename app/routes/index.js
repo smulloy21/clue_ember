@@ -10,8 +10,11 @@ export default Ember.Route.extend({
     });
   },
   actions: {
-    newGame(params, suspects, rooms, weapons) {
+    newGame(params) {
       var newGame = this.store.createRecord('game', params);
+      var suspects = params.suspects;
+      var rooms = params.rooms;
+      var weapons = params.weapons;
       newGame.save().then(function() {
         return suspects.save().then(function() {
           return rooms.save().then(function() {

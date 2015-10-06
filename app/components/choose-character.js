@@ -2,23 +2,21 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   actions: {
-    newGame(character, suspects, rooms, weapons) {
+    newGame(character) {
       var params = {
-        character: character,
+        character: character.get('name'),
         guesses: [],
-        win: false,
-        score: 0,
-        rooms: rooms,
-        suspects: suspects,
-        weapons: weapons,
+        rooms: this.get('model.rooms'),
+        suspects: this.get('model.suspects'),
+        weapons: this.get('model.weapons'),
         answer: {
-          who: suspects.objectAt(Math.floor(Math.random()*6)),
-          where: rooms.objectAt(Math.floor(Math.random()*6)),
-          how: weapons.objectAt(Math.floor(Math.random()*6))
+          who: this.get('model.suspects').objectAt(Math.floor(Math.random()*6)).get('name'),
+          where: this.get('model.rooms').objectAt(Math.floor(Math.random()*6)).get('name'),
+          how: this.get('model.weapons').objectAt(Math.floor(Math.random()*6)).get('name')
         }
       };
       console.log(params.answer.who);
-      this.sendAction('newGame', params, suspects, rooms, weapons);
+      this.sendAction('newGame', params);
     }
   }
 });
