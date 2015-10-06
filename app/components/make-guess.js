@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+  stillPlaying: true,
   guessForm: true,
   message: '',
   actions: {
@@ -12,6 +13,8 @@ export default Ember.Component.extend({
         game: this.get('model.game')
       };
       var answer = params.game.get('answer');
+      var guesses = params.game.get('guesses');
+      console.log(guesses.get('length'));
       var wrong = [];
       if (params.who !== answer.who) { wrong.push(params.who)}
       if (params.how !== answer.how) {wrong.push(params.how)}
@@ -20,9 +23,9 @@ export default Ember.Component.extend({
         // clue = wrong[random.w]
         this.set("message", "You got " +wrong.length+ " wrong.");
       } else {
-        this.set("message", "You win!");
+        this.set("message", "You solved the game in " + guesses.get('length') + " guesses, for " + (100 - (guesses.get('length') * 5)) + " points.");
+        this.set('stillPlaying', false);
       }
-      debugger;
       this.set('guessForm', false);
       this.sendAction('makeGuess', params);
     },
