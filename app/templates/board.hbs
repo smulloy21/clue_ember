@@ -17,7 +17,7 @@
 <button class="btn btn-default" {{action 'enterRoom' room model.game}}>{{room.name}}</button>
 {{/each}}
 
-
+<br><br><br>
 <h5>So far you've guessed:</h5>
 {{#each model.game.guesses as |guess|}}
 <h6>{{guess.who}} in the {{guess.where}} with the {{guess.how}}.</h6>

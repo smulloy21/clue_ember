@@ -23,7 +23,7 @@
   </form>
 {{else}}
   <h1>{{message}}</h1>
-  <button class="btn btn-default" {{action 'leaveRoom' model.game}}>Leave the {{model.room.name}}</button>
+  {{#link-to 'board' model.game.id}}<button class="btn btn-default">Leave the {{model.room.name}}</button>{{/link-to}}
   <button class="btn btn-default" {{action 'guessAgain'}}>Guess again</button>
 
   <h5>So far you've guessed:</h5>
