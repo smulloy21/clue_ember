@@ -1,11 +1,3 @@
 <h1>Welcome to Clue</h1>
 
-{{model.suspects.objectAt(0).name}}
-
-<h3>Choose a character:</h3>
- {{#each model.suspects as |suspect|}}
- <div id="choose-character-container" class="col-xs-2">
-   <div {{action 'newGame' suspect.name model.suspects model.rooms model.weapons}} id="choose-character" style="background-image: url({{suspect.image}});">
-   </div>
- </div>
- {{/each}}
+{{choose-character model=model newGame='newGame'}}

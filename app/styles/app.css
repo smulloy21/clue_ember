@@ -3,17 +3,17 @@ body {
   color: #AAAAAA;
   font-family: 'Crimson Text', serif;
 }
-#choose-character {
+.choose-character {
   background-size: cover;
   border-radius: 5px;
   height: inherit;
 }
-#choose-character-container {
+.choose-character-container {
   float: left;
   padding: 5px;
   height: 150px;
 }
-#choose-character-container:hover {
+.choose-character-container:hover {
   padding: 0;
   height: 170px;
 }
