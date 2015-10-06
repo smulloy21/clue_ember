@@ -1,0 +1,19 @@
+body {
+  background-color: #111111;
+  color: #AAAAAA;
+  font-family: 'Crimson Text', serif;
+}
+#choose-character {
+  background-size: cover;
+  border-radius: 5px;
+  height: inherit;
+}
+#choose-character-container {
+  float: left;
+  padding: 5px;
+  height: 150px;
+}
+#choose-character-container:hover {
+  padding: 0;
+  height: 170px;
+}
