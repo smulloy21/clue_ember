@@ -17,3 +17,17 @@ body {
   padding: 0;
   height: 170px;
 }
+.room-tile {
+  background-size: cover;
+  border-radius: 5px;
+  height: inherit;
+}
+.room-tile-container {
+  float: left;
+  padding: 20px 40px;
+  height: 200px;
+  margin: 30px 0;
+}
+.room-tile-container:hover {
+  padding: 10px 20px 0 20px;
+}

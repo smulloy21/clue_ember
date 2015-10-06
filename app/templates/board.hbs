@@ -1,24 +1,22 @@
 <br>
 <br>
-{{#each model.suspects as |suspect|}}
-  {{#if (eq suspect.name model.game.character)}}
-    <div class="choose-character-container col-xs-2">
-      <div class="choose-character" style="background-image: url({{suspect.image}});">
+<div class="row">
+  {{#each model.suspects as |suspect|}}
+    {{#if (eq suspect.name model.game.character)}}
+      <div class="choose-character-container col-xs-2">
+        <div class="choose-character" style="background-image: url({{suspect.image}});">
+        </div>
       </div>
+    {{/if}}
+  {{/each}}
+  <h1>Good evening, {{model.game.character}}</h1>
+</div>
+
+<div class="container col-xs-10 col-xs-offset-1">
+  {{#each model.rooms as |room|}}
+  <div class="col-xs-4 room-tile-container">
+    <div class="room-tile" {{action 'enterRoom' room model.game}} style="background-image: url({{room.image}});">
     </div>
-  {{/if}}
-{{/each}}
-<h1>Good evening, {{model.game.character}}</h1>
-
-<!-- <h5>(It was {{model.game.answer.who}} in the {{model.game.answer.where}} with the {{model.game.answer.how}}.)</h5> -->
-
-
-{{#each model.rooms as |room|}}
-<button class="btn btn-default" {{action 'enterRoom' room model.game}}>{{room.name}}</button>
-{{/each}}
-
-<!-- <br><br><br>
-<h5>So far you've guessed:</h5>
-{{#each model.game.guesses as |guess|}}
-<h6>{{guess.who}} in the {{guess.where}} with the {{guess.how}}.</h6>
-{{/each}} -->
+  </div>
+  {{/each}}
+</div>
