@@ -1,22 +1,33 @@
-<h4>Guess:</h4>
-<form>
-  <label>It was</label>
-  {{#x-select class="form-control" value=who id="who"}}
-    {{#x-option disabled}}Choose suspect{{/x-option}}
-     {{#each model.suspects as |suspect|}}
-       {{#x-option value=suspect.name}}{{suspect.name}}{{/x-option}}
-     {{/each}}
-   {{/x-select}}
-  <label>in the</label>
-  {{#x-select class="form-control" value=where id="where"}}
-    {{#x-option value=model.room.name}}{{model.room.name}}{{/x-option}}
-  {{/x-select}}
-  <label>with the</label>
-  {{#x-select class="form-control" value=how id="how"}}
-    {{#x-option disabled}}Choose weapon{{/x-option}}
-     {{#each model.weapons as |weapon|}}
-       {{#x-option value=weapon.name}}{{weapon.name}}{{/x-option}}
-     {{/each}}
-   {{/x-select}}
-  <button class="btn btn-default" {{action 'makeGuess'}}>Accuse</button>
-</form>
+{{#if guessForm}}
+  <h4>Guess:</h4>
+  <form>
+    <label>It was</label>
+    {{#x-select class="form-control" value=who id="who"}}
+      {{#x-option disabled}}Choose suspect{{/x-option}}
+       {{#each model.suspects as |suspect|}}
+         {{#x-option value=suspect.name}}{{suspect.name}}{{/x-option}}
+       {{/each}}
+     {{/x-select}}
+    <label>in the</label>
+    {{#x-select class="form-control" value=where id="where"}}
+      {{#x-option value=model.room.name}}{{model.room.name}}{{/x-option}}
+    {{/x-select}}
+    <label>with the</label>
+    {{#x-select class="form-control" value=how id="how"}}
+      {{#x-option disabled}}Choose weapon{{/x-option}}
+       {{#each model.weapons as |weapon|}}
+         {{#x-option value=weapon.name}}{{weapon.name}}{{/x-option}}
+       {{/each}}
+     {{/x-select}}
+    <button class="btn btn-default" {{action 'makeGuess'}}>Accuse</button>
+  </form>
+{{else}}
+  <h1>{{message}}</h1>
+  <button class="btn btn-default" {{action 'leaveRoom' model.game}}>Leave the {{model.room.name}}</button>
+  <button class="btn btn-default" {{action 'guessAgain'}}>Guess again</button>
+
+  <h5>So far you've guessed:</h5>
+  {{#each model.game.guesses as |guess|}}
+  <h6>{{guess.who}} in the {{guess.where}} with the {{guess.how}}.</h6>
+  {{/each}}
+{{/if}}
