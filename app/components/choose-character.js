@@ -40,7 +40,7 @@ export default Ember.Component.extend({
       console.log(cardArray.length);
       var params = {
         character: player,
-        guesses: [],
+
         rooms: rooms,
         suspects: suspects,
         weapons: weapons,
@@ -51,6 +51,7 @@ export default Ember.Component.extend({
         },
         cards: cardArray,
         opponents: opponents,
+        turn: 5,
       };
       console.log(params.answer.who + " in the " + params.answer.where + " with the " + params.answer.how);
       this.sendAction('newGame', params);

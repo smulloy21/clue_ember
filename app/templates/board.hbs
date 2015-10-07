@@ -12,11 +12,4 @@
   <h1>Good evening, {{model.game.character.name}}</h1>
 </div>
 
-<div class="container col-xs-8 col-xs-offset-2">
-  {{#each model.rooms as |room|}}
-  <div class="col-xs-4 room-tile-container">
-    <div class="room-tile" {{action 'enterRoom' room model.game}} style="background-image: url({{room.image}});">
-    </div>
-  </div>
-  {{/each}}
-</div>
+{{turn-order model=model enterRoom='enterRoom' opponentGuess='opponentGuess' nextTurn='nextTurn'}}

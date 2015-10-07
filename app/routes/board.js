@@ -12,6 +12,17 @@ export default Ember.Route.extend({
   actions: {
     enterRoom(room, game) {
       this.transitionTo('room', game.id, room.id);
+    },
+    opponentGuess(player, who, where, how) {
+      var game = this.get('model.game');
+      this.get('model.game.opponents')[this.get('model.game.turn')].guesses.push({who: who, where: where, how: how});
+      game.save();
+    },
+    nextTurn(game) {
+      game.set('turn', game.get('turn')+1);
+      game.save();
+      console.log(game.get('turn'));
+      debugger;
     }
   }
 });

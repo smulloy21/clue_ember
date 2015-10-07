@@ -14,7 +14,6 @@ export default Ember.Component.extend({
       };
       var answer = params.game.get('answer');
       var guesses = params.game.get('guesses');
-      console.log(guesses.get('length'));
       var wrong = [];
       if (params.who !== answer.who) { wrong.push(params.who)}
       if (params.how !== answer.how) {wrong.push(params.how)}
@@ -29,13 +28,8 @@ export default Ember.Component.extend({
       this.set('guessForm', false);
       this.sendAction('makeGuess', params);
     },
-    guessAgain() {
-      this.set('message', '');
-      this.set('guessForm', true);
-    },
     leaveRoom(game) {
       var id = game.id;
-      console.log(id);
       this.transitionTo('board', id);
     }
   }
