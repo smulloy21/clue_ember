@@ -13,6 +13,12 @@ export default Ember.Route.extend({
     makeGuess(params) {
       var newGuess = this.store.createRecord('guess', params);
       var game = params.game;
+      if (game.get('turn') == 5) {
+        game.set('turn', 0);
+      } else {
+        game.set('turn', game.get('turn')+1);
+      }
+      console.log(game.get('turn'));
       newGuess.save().then(function() {
         return game.save();
       });

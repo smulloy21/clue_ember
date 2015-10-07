@@ -9,4 +9,5 @@ export default DS.Model.extend({
   weapons: DS.hasMany('weapon', {async: true}),
   cards: DS.attr(),
   opponents: DS.attr(),
+  turn: DS.attr(),
 });

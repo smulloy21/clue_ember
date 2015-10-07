@@ -1,0 +1,18 @@
+{{#if (eq player model.game.character)}}
+  <div class="container col-xs-8 col-xs-offset-2">
+    {{#each model.rooms as |room|}}
+    <div class="col-xs-4 room-tile-container">
+      <div class="room-tile" {{action 'enterRoom' room model.game}} style="background-image: url({{room.image}});">
+      </div>
+    </div>
+    {{/each}}
+  </div>
+{{else}}
+  {{#if (not-eq playersGuess '')}}
+    <h1>{{player.name}} guessed {{playersGuess}}</h1>
+    <button class="btn btn-default" {{action 'nextTurn' model.game}}>Ok</button>
+  {{else}}
+    <h1>It's {{player.name}}'s turn.</h1>
+    <button class="btn btn-default" {{action 'opponentGuess'}}>Ok</button>
+  {{/if}}
+{{/if}}
