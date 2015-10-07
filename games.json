@@ -1,38 +1,38 @@
 { "rooms": [{
-    "name": "Library",
-    "image": "/assets/library.jpg",
-    "games": []
-  }, {
-    "name": "Hall",
-    "image": "/assets/hall.jpg",
-    "games": []
-  }, {
-    "name": "Conservatory",
-    "image": "/assets/conservatory.jpg",
-    "games": []
-  }, {
-    "name": "Kitchen",
-    "image": "/assets/kitchen.jpg",
-    "games": []
-  }, {
-    "name": "Ballroom",
-    "image": "/assets/ballroom.jpg",
-    "games": []
-  }, {
-    "name": "Billard Room",
-    "image": "/assets/billiard-room.jpg",
-    "games": []
-  }, {
     "name": "Lounge",
-    "image": "/assets/lounge.jpg",
+    "image": "/assets/lounge.png",
     "games": []
   }, {
     "name": "Dining Room",
-    "image": "/assets/dining-room.jpg",
+    "image": "/assets/dining-room.png",
+    "games": []
+  }, {
+    "name": "Kitchen",
+    "image": "/assets/kitchen.png",
+    "games": []
+  }, {
+    "name": "Library",
+    "image": "/assets/library.png",
+    "games": []
+  }, {
+    "name": "Hall",
+    "image": "/assets/hall.png",
+    "games": []
+  }, {
+    "name": "Ballroom",
+    "image": "/assets/ballroom.png",
     "games": []
   }, {
     "name": "Study",
-    "image": "/assets/study.jpg",
+    "image": "/assets/study.png",
+    "games": []
+  }, {
+    "name": "Billard Room",
+    "image": "/assets/billiard-room.png",
+    "games": []
+  }, {
+    "name": "Conservatory",
+    "image": "/assets/conservatory.png",
     "games": []
   }],
   "suspects": [{
