@@ -1,10 +1,10 @@
 { "rooms": [{
     "name": "Library",
-    "image": "https://bluesyemre.files.wordpress.com/2013/03/the-biltmore-house-library-in-north-carolina.jpg",
+    "image": "/assets/library.jpg",
     "games": []
   }, {
     "name": "Hall",
-    "image": "http://gaming.trendolizer.com/images/392739.jpg",
+    "image": "/assets/hall.jpg",
     "games": []
   }, {
     "name": "Conservatory",
@@ -12,27 +12,27 @@
     "games": []
   }, {
     "name": "Kitchen",
-    "image": "http://i.dailymail.co.uk/i/pix/2015/06/09/13/2978172300000578-3116812-image-a-47_1433851312675.jpg",
-    "games": []
-  }, {
-    "name": "Cellar",
-    "image": "http://hgtvhome.sndimg.com/content/dam/images/hgtv/fullset/2012/4/4/2/HMDRS201H_wine-cellar-3047_s4x3.jpg.rend.hgtvcom.1280.960.jpeg",
-    "games": []
-  }, {
-    "name": "Billard Room",
-    "image": "http://onekindesign.com/wp-content/uploads/2012/09/Malinard-Manor-02-1-Kind-Design-600x400.jpg",
+    "image": "/assets/kitchen.jpg",
     "games": []
   }, {
     "name": "Ballroom",
-    "image": "https://sites.udel.edu/materialmatters/files/2015/02/B3-Livery-Hall-1nifqfp.jpg",
+    "image": "/assets/ballroom.jpg",
+    "games": []
+  }, {
+    "name": "Billard Room",
+    "image": "/assets/billiard-room.jpg",
+    "games": []
+  }, {
+    "name": "Lounge",
+    "image": "/assets/lounge.jpg",
     "games": []
   }, {
     "name": "Dining Room",
-    "image": "http://danettebeatty.com/wp-content/uploads/2015/04/clue_room_021.jpg",
+    "image": "/assets/dining-room.jpg",
     "games": []
   }, {
     "name": "Study",
-    "image": "http://www.marketingandtechnology.com/repository/webstories/webst11227.png",
+    "image": "/assets/study.jpg",
     "games": []
   }],
   "suspects": [{

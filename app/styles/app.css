@@ -19,13 +19,13 @@ body {
 }
 .room-tile {
   background-size: cover;
-  border-radius: 5px;
+  border-radius: 10px;
   height: inherit;
 }
 .room-tile-container {
   float: left;
   padding: 20px 40px;
-  height: 200px;
+  height: 260px;
   margin: 30px 0;
 }
 .room-tile-container:hover {
