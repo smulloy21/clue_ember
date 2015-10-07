@@ -23,7 +23,6 @@ export default Ember.Route.extend({
         });
       });
       var id = newGame.id;
-      console.log(id);
       this.transitionTo('board', id);
     }
   }

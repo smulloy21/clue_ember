@@ -6,5 +6,7 @@ export default DS.Model.extend({
   guesses: DS.hasMany('guess', {async: true}),
   rooms: DS.hasMany('room', {async: true}),
   suspects: DS.hasMany('suspect', {async: true}),
-  weapons: DS.hasMany('weapon', {async: true})
+  weapons: DS.hasMany('weapon', {async: true}),
+  cards: DS.attr(),
+  opponents: DS.attr(),
 });

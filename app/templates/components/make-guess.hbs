@@ -34,7 +34,7 @@
     {{/each}} -->
   {{/if}}
 {{else}}
-  <h1>Congratulations, {{model.game.character}}, you solved the mystery. It was {{model.game.answer.who}} in the {{model.game.answer.where}} with the {{model.game.answer.how}}.</h1>
+  <h1>Congratulations, {{model.game.character.name}}, you solved the mystery. It was {{model.game.answer.who}} in the {{model.game.answer.where}} with the {{model.game.answer.how}}.</h1>
   <h1>{{message}}</h1>
   {{#link-to 'index'}}<button class="btn btn-default">Play again</button>{{/link-to}}
 {{/if}}
