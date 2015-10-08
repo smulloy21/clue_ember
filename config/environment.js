@@ -5,7 +5,7 @@ module.exports = function(environment) {
     modulePrefix: 'clue',
     environment: environment,
     contentSecurityPolicy: { 'connect-src': "'self' https://auth.firebase.com wss://*.firebaseio.com" },
-    firebase: 'https://clue.firebaseio.com/',
+    firebase: 'https://single-player-clue.firebaseio.com/',
     baseURL: '/',
     locationType: 'auto',
     EmberENV: {
