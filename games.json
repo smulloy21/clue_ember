@@ -1,88 +1,100 @@
 { "rooms": [{
-    "name": "Lounge",
-    "image": "/assets/lounge.png",
+    "name": "Bridge",
+    "image": "/assets/bridge.png",
     "games": []
   }, {
-    "name": "Dining Room",
-    "image": "/assets/dining-room.png",
+    "name": "Cargo Bay",
+    "image": "/assets/cargo-bay.png",
+    "games": []
+  }, {
+    "name": "Engine Room",
+    "image": "/assets/engine-room.png",
+    "games": []
+  }, {
+    "name": "Inara's Shuttle",
+    "image": "/assets/inaras-shuttle.png",
+    "games": []
+  }, {
+    "name": "Jayne's Bunk",
+    "image": "/assets/jaynes-bunk.png",
     "games": []
   }, {
     "name": "Kitchen",
     "image": "/assets/kitchen.png",
     "games": []
   }, {
-    "name": "Library",
-    "image": "/assets/library.png",
+    "name": "Mal's Room",
+    "image": "/assets/mals-room.png",
     "games": []
   }, {
-    "name": "Hall",
-    "image": "/assets/hall.png",
+    "name": "Passenger Dorm",
+    "image": "/assets/passenger-dorm.png",
     "games": []
   }, {
-    "name": "Ballroom",
-    "image": "/assets/ballroom.png",
-    "games": []
-  }, {
-    "name": "Study",
-    "image": "/assets/study.png",
-    "games": []
-  }, {
-    "name": "Billard Room",
-    "image": "/assets/billiard-room.png",
-    "games": []
-  }, {
-    "name": "Conservatory",
-    "image": "/assets/conservatory.png",
+    "name": "Sick Bay",
+    "image": "/assets/sick-bay.png",
     "games": []
   }],
   "suspects": [{
-    "name": "Miss Scarlet",
-    "image": "/assets/miss_scarlet.jpg",
+    "name": "Inara",
+    "image": "/assets/inara.jpg",
     "games": []
   }, {
-    "name": "Professor Plum",
-    "image": "/assets/professor_plum.jpg",
+    "name": "Jayne",
+    "image": "/assets/jayne.jpg",
     "games": []
   }, {
-    "name": "Mrs. Peacock",
-    "image": "/assets/ms__peacock.jpg",
+    "name": "Kaylee",
+    "image": "/assets/kaylee.jpg",
     "games": []
   }, {
-    "name": "Mr. Green",
-    "image": "/assets/mr__green.jpg",
+    "name": "Mal",
+    "image": "/assets/mal.jpg",
     "games": []
   }, {
-    "name": "Colonel Mustard",
-    "image": "/assets/colonel_mustard.jpg",
+    "name": "Wash",
+    "image": "/assets/wash.jpg",
     "games": []
   }, {
-    "name": "Mrs. White",
-    "image": "/assets/mrs__white.jpg",
+    "name": "Zoe",
+    "image": "/assets/zoe.jpg",
     "games": []
   }],
   "weapons": [{
-    "name": "candlestick",
-    "image": "https://scontent.cdninstagram.com/hphotos-xta1/t51.2885-15/s320x320/e15/10249288_229714847226274_933457160_n.jpg",
+    "name": "Dinosaur",
+    "image": "/assets/dinosaur.jpg",
     "games": []
   }, {
-    "name": "dagger",
-    "image": "https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/s320x320/e15/1662840_234063183462023_901065330_n.jpg",
+    "name": "Hands of Blue",
+    "image": "/assets/hands-of-blue.jpg",
     "games": []
   }, {
-    "name": "lead pipe",
-    "image": "https://scontent.cdninstagram.com/hphotos-xap1/t51.2885-15/s320x320/e15/928489_265162240321315_1225049847_n.jpg",
+    "name": "Leather necklace",
+    "image": "/assets/leather-necklace.jpg",
     "games": []
   }, {
-    "name": "revolver",
-    "image": "https://scontent.cdninstagram.com/hphotos-xpt1/t51.2885-15/s320x320/e15/10254230_1492646637622143_1279208031_n.jpg",
+    "name": "Med kit",
+    "image": "/assets/med-kit.jpg",
     "games": []
   }, {
-    "name": "rope",
-    "image": "https://scontent.cdninstagram.com/hphotos-xfa1/t51.2885-15/s320x320/e15/10175290_243755335826306_1705900049_n.jpg",
+    "name": "Six shooter",
+    "image": "/assets/six-shooter.jpg",
     "games": []
   }, {
-    "name": "wrench",
-    "image": "https://scontent.cdninstagram.com/hphotos-xfp1/t51.2885-15/s320x320/e15/1390381_1383280271918825_307054082_n.jpg",
+    "name": "Teapot",
+    "image": "/assets/teapot.jpg",
+    "games": []
+  }, {
+    "name": "Torn book",
+    "image": "/assets/torn-book.jpg",
+    "games": []
+  }, {
+    "name": "Vera",
+    "image": "/assets/vera.jpg",
+    "games": []
+  }, {
+    "name": "Wrench",
+    "image": "/assets/wrench.jpg",
     "games": []
   }]
 }
