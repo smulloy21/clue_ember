@@ -3,6 +3,24 @@ body {
   color: #AAAAAA;
   font-family: 'Crimson Text', serif;
 }
+
+#checkone {
+  display: inline-block;
+}
+
+#checktwo {
+  display: inline-block;
+}
+
+#checkthree {
+  display: inline-block;
+}
+
+#checkfour {
+  display: inline-block;
+}
+
+
 .choose-character {
   background-size: cover;
   border-radius: 5px;
