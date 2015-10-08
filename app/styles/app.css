@@ -26,7 +26,7 @@ body {
 .room-tile-container {
   float: left;
   padding: 10px;
-  height: 267px;
+  height: 227px;
   margin: 10px 0;
 }
 .room-tile-container:hover {

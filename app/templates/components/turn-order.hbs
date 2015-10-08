@@ -9,7 +9,7 @@
   </div>
 {{else}}
   {{#if (not-eq playersGuess '')}}
-    <h1>{{player.name}} guessed {{playersGuess}}</h1>
+    <h1>{{player.name}} guessed {{playersGuess}}.</h1>
     <button class="btn btn-default" {{action 'nextTurn' model.game}}>Ok</button>
   {{else}}
     <h1>It's {{player.name}}'s turn.</h1>
