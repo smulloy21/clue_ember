@@ -1,4 +1,4 @@
-{{#if (eq player model.game.character)}}
+{{#if (eq player.name model.game.character.name)}}
   <div class="container col-xs-8 col-xs-offset-2">
     {{#each model.rooms as |room|}}
     <div class="col-xs-4 room-tile-container">

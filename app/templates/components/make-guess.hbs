@@ -24,13 +24,14 @@
       <button class="btn btn-default" {{action 'makeGuess'}}>Accuse</button>
     </form>
   {{else}}
-    <h1>{{message}}</h1>
+    {{#each model.game.checks as |check|}}
+      {{#if (eq check.reveal false)}}
+        <h3>{{check.who.name}} passed.</h3>
+      {{else}}
+        <h3>{{check.who.name}} showed you {{check.reveal}}.</h3>
+      {{/if}}
+    {{/each}}
     {{#link-to 'board' model.game.id}}<button class="btn btn-default">Leave the {{model.room.name}}</button>{{/link-to}}
-
-    <!-- <h5>So far you've guessed:</h5>
-    {{#each model.game.guesses as |guess|}}
-    <h6>{{guess.who}} in the {{guess.where}} with the {{guess.how}}.</h6>
-    {{/each}} -->
   {{/if}}
 {{else}}
   <h1>Congratulations, {{model.game.character.name}}, you solved the mystery. It was {{model.game.answer.who}} in the {{model.game.answer.where}} with the {{model.game.answer.how}}.</h1>

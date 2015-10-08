@@ -20,7 +20,7 @@ export default Ember.Component.extend({
       if (params.where !== answer.where) {wrong.push(params.where)}
       if (wrong.length > 0) {
         // clue = wrong[random.w]
-        this.set("message", "You got " +wrong.length+ " wrong.");
+        this.set("message", "You got " + wrong.length + " wrong.");
       } else {
         this.set("message", "You solved the game in " + guesses.get('length') + " guesses, for " + (100 - (guesses.get('length') * 5)) + " points.");
         this.set('stillPlaying', false);
