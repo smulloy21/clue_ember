@@ -32,14 +32,6 @@
       {{/if}}
     {{/each}}
     {{#link-to 'board' model.game.id}}<button class="btn btn-default">Leave the {{model.room.name}}</button>{{/link-to}}
-<<<<<<< HEAD
-
-    <!-- <h5>So far you've guessed:</h5>
-    {{#each model.game.guesses as |guess|}}
-    <h6>{{guess.who}} in the {{guess.where}} with the {{guess.how}}.</h6>
-    {{/each}} -->
-=======
->>>>>>> goose-chase
   {{/if}}
 {{else}}
   <h1>Congratulations, {{model.game.character.name}}, you solved the mystery. It was {{model.game.answer.who}} in the {{model.game.answer.where}} with the {{model.game.answer.how}}.</h1>

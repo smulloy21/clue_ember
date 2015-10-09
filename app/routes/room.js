@@ -13,18 +13,10 @@ export default Ember.Route.extend({
     makeGuess(params) {
       var newGuess = this.store.createRecord('guess', params);
       var game = params.game;
-<<<<<<< HEAD
-      if (game.get('turn') == 5) {
-        game.set('turn', 0);
-      } else {
-        game.set('turn', game.get('turn')+1);
-      }
-=======
       game.set('turn', 0);
       game.save();
       game.set('checkOrder', 0);
       game.save();
->>>>>>> goose-chase
       console.log(game.get('turn'));
       newGuess.save().then(function() {
         return game.save();

@@ -13,11 +13,6 @@ export default Ember.Route.extend({
     enterRoom(room, game) {
       this.transitionTo('room', game.id, room.id);
     },
-<<<<<<< HEAD
-    opponentGuess(player, who, where, how) {
-      var game = this.get('model.game');
-      this.get('model.game.opponents')[this.get('model.game.turn')].guesses.push({who: who, where: where, how: how});
-=======
     opponentGuess(who, where, how, game) {
       var player = game.get('opponents').objectAt(game.get('turn'));
       if (player.guesses !== undefined) {
@@ -28,17 +23,12 @@ export default Ember.Route.extend({
 
       }
       game.set('opponents', game.get('opponents'));
->>>>>>> goose-chase
       game.save();
     },
     nextTurn(game) {
       game.set('turn', game.get('turn')+1);
       game.save();
       console.log(game.get('turn'));
-<<<<<<< HEAD
-      debugger;
-=======
->>>>>>> goose-chase
     }
   }
 });

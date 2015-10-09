@@ -10,9 +10,6 @@ export default DS.Model.extend({
   cards: DS.attr(),
   opponents: DS.attr(),
   turn: DS.attr(),
-<<<<<<< HEAD
-=======
   checkOrder: DS.attr(),
   checks: DS.attr(),
->>>>>>> goose-chase
 });
