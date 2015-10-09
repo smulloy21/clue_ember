@@ -12,7 +12,11 @@ export default Ember.Component.extend({
       for(var i = 0; i < suspects.get('length'); i++) {
         cardArray.push(suspects.objectAt(i).get('name'));
         if(suspects.objectAt(i).get('name') !== character.get('name')) {
+<<<<<<< HEAD
           opponents.push({name: suspects.objectAt(i).get('name'), cards: [], guesses: []});
+=======
+          opponents.push({name: suspects.objectAt(i).get('name'), cards: [], guesses: [{who: "", where: "", how: ""}]});
+>>>>>>> goose-chase
         }
       }
       for(var i = 0; i < rooms.get('length'); i++) {
@@ -52,6 +56,11 @@ export default Ember.Component.extend({
         cards: cardArray,
         opponents: opponents,
         turn: 5,
+<<<<<<< HEAD
+=======
+        checkOrder: 0,
+        checks: [],
+>>>>>>> goose-chase
       };
       console.log(params.answer.who + " in the " + params.answer.where + " with the " + params.answer.how);
       this.sendAction('newGame', params);

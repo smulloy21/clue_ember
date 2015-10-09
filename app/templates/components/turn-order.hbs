@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 {{#if (eq player model.game.character)}}
+=======
+{{#if (eq player.name model.game.character.name)}}
+>>>>>>> goose-chase
   <div class="container col-xs-8 col-xs-offset-2">
     {{#each model.rooms as |room|}}
     <div class="col-xs-4 room-tile-container">
@@ -9,7 +13,11 @@
   </div>
 {{else}}
   {{#if (not-eq playersGuess '')}}
+<<<<<<< HEAD
     <h1>{{player.name}} guessed {{playersGuess}}</h1>
+=======
+    <h1>{{player.name}} guessed {{playersGuess}}.</h1>
+>>>>>>> goose-chase
     <button class="btn btn-default" {{action 'nextTurn' model.game}}>Ok</button>
   {{else}}
     <h1>It's {{player.name}}'s turn.</h1>
