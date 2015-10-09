@@ -14,7 +14,6 @@ export default Ember.Route.extend({
       var newGuess = this.store.createRecord('guess', params);
       var game = params.game;
       game.set('turn', 0);
-      game.save();
       game.set('checkOrder', 0);
       game.save();
       console.log(game.get('turn'));

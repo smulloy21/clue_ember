@@ -6,20 +6,30 @@ export default Ember.Component.extend({
       var player = {name: character.get('name'), cards: [], guesses: []},
           opponents = [],
           cardArray = [],
-          suspects = this.get('model.suspects'),
-          rooms = this.get('model.rooms'),
-          weapons = this.get('model.weapons');
+          notes = [],
+          suspects = this.get('model.suspects'), suspectNames = [],
+          rooms = this.get('model.rooms'), roomNames = [],
+          weapons = this.get('model.weapons'), weaponNames = [];
+      var name;
       for(var i = 0; i < suspects.get('length'); i++) {
-        cardArray.push(suspects.objectAt(i).get('name'));
-        if(suspects.objectAt(i).get('name') !== character.get('name')) {
-          opponents.push({name: suspects.objectAt(i).get('name'), cards: [], guesses: []});
-        }
+        name = suspects.objectAt(i).get('name');
+        suspectNames.push(name);
+        cardArray.push(name);
       }
       for(var i = 0; i < rooms.get('length'); i++) {
-        cardArray.push(rooms.objectAt(i).get('name'));
+        name = rooms.objectAt(i).get('name');
+        roomNames.push(name);
+        cardArray.push(name);
       }
       for(var i = 0; i < weapons.get('length'); i++) {
-        cardArray.push(weapons.objectAt(i).get('name'));
+        name = weapons.objectAt(i).get('name');
+        weaponNames.push(name);
+        cardArray.push(name);
+      }
+      for(var i = 0; i < suspectNames.length; i++) {
+        if (suspectNames[i] !== character.get('name')) {
+          opponents.push({name: suspectNames[i], cards: [], guesses: [], possibles: {suspects: suspectNames.slice(), rooms: roomNames.slice(), weapons: weaponNames.slice()}});
+        }
       }
       var who = (cardArray.splice(Math.floor(Math.random()*6), 1)).toString(),
           where = (cardArray.splice(Math.floor(Math.random() * 9 + 5), 1)).toString(),
@@ -34,26 +44,41 @@ export default Ember.Component.extend({
           };
       cardArray = shuffle(cardArray);
       player.cards = cardArray.splice(0, 3);
-      for(var i = 0; i < opponents.length; i++) {
-        opponents[i].cards = cardArray.splice(0,3);
+      var opponent, card, index;
+      for (var i = 0; i < opponents.length; i++) {
+        opponent = opponents[i];
+        opponent.cards = cardArray.splice(0,3);
+        for (var j = 0; j < opponent.cards.length; j++) {
+          card = opponent.cards[j];
+          index = opponent.possibles.suspects.indexOf(card);
+          if (index !== -1) {
+            opponent.possibles.suspects.splice(index, 1);
+          }
+          index = opponent.possibles.rooms.indexOf(card);
+          if (index !== -1) {
+            opponent.possibles.rooms.splice(index, 1);
+          }
+          index = opponent.possibles.weapons.indexOf(card);
+          if (index !== -1) {
+            opponent.possibles.weapons.splice(index, 1);
+          }
+        }
       }
-      console.log(cardArray.length);
       var params = {
         character: player,
-
-        rooms: rooms,
         suspects: suspects,
+        rooms: rooms,
         weapons: weapons,
         answer: {
           who: who,
           where: where,
           how: how,
         },
-        cards: cardArray,
         opponents: opponents,
         turn: 5,
         checkOrder: 0,
         checks: [],
+        notes: []
       };
       console.log(params.answer.who + " in the " + params.answer.where + " with the " + params.answer.how);
       this.sendAction('newGame', params);
