@@ -36,65 +36,65 @@
     "games": []
   }],
   "suspects": [{
-    "name": "Inara",
-    "image": "/assets/inara.jpg",
-    "games": []
-  }, {
-    "name": "Jayne",
-    "image": "/assets/jayne.jpg",
-    "games": []
-  }, {
-    "name": "Kaylee",
-    "image": "/assets/kaylee.jpg",
-    "games": []
-  }, {
     "name": "Mal",
-    "image": "/assets/mal.jpg",
-    "games": []
-  }, {
-    "name": "Wash",
-    "image": "/assets/wash.jpg",
+    "image": "/assets/mal.png",
     "games": []
   }, {
     "name": "Zoe",
-    "image": "/assets/zoe.jpg",
+    "image": "/assets/zoe.png",
+    "games": []
+  }, {
+    "name": "Wash",
+    "image": "/assets/wash.png",
+    "games": []
+  }, {
+    "name": "Kaylee",
+    "image": "/assets/kaylee.png",
+    "games": []
+  }, {
+    "name": "Jayne",
+    "image": "/assets/jayne.png",
+    "games": []
+  }, {
+    "name": "Inara",
+    "image": "/assets/inara.png",
     "games": []
   }],
   "weapons": [{
     "name": "Dinosaur",
-    "image": "/assets/dinosaur.jpg",
+    "image": "/assets/dinosaur.png",
     "games": []
   }, {
     "name": "Hands of Blue",
-    "image": "/assets/hands-of-blue.jpg",
+    "image": "/assets/hands-of-blue.png",
     "games": []
   }, {
     "name": "Leather necklace",
-    "image": "/assets/leather-necklace.jpg",
+    "image": "/assets/leather-necklace.png",
     "games": []
   }, {
     "name": "Med kit",
-    "image": "/assets/med-kit.jpg",
+    "image": "/assets/med-kit.png",
     "games": []
   }, {
     "name": "Six shooter",
-    "image": "/assets/six-shooter.jpg",
+    "image": "/assets/six-shooter.png",
     "games": []
   }, {
     "name": "Teapot",
-    "image": "/assets/teapot.jpg",
+    "image": "/assets/teapot.png",
     "games": []
   }, {
     "name": "Torn book",
-    "image": "/assets/torn-book.jpg",
+    "image": "/assets/torn-book.png",
     "games": []
   }, {
     "name": "Vera",
-    "image": "/assets/vera.jpg",
+    "image": "/assets/vera.png",
     "games": []
   }, {
     "name": "Wrench",
-    "image": "/assets/wrench.jpg",
+    "image": "/assets/wrench.png",
     "games": []
   }]
 }
