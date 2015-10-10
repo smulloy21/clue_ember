@@ -16,12 +16,15 @@ export default Ember.Component.extend({
       this.sendAction('enterRoom', room, game);
     },
     opponentGuess() {
-      var who, where, how;
-      var game = this.get('model.game');
-      var player = this.get('player');
-
-      this.set('playersGuess', who + " in the " + where + " with the " + how);
-      this.sendAction('opponentGuess', who, where, how, game);
+      var params = {
+        game: this.get('model.game'),
+        player: this.get('player'),
+        who: player.possibles.suspects.objectAt(Math.floor(Math.random()*(player.possibles.suspects.length))),
+        where: player.possibles.rooms.objectAt(Math.floor(Math.random()*(player.possibles.rooms.length))),
+        how: player.possibles.weapons.objectAt(Math.floor(Math.random()*(player.possibles.weapons.length))),
+      }
+      this.set('playersGuess', params.who + " in the " + params.where + " with the " + params.how);
+      this.sendAction('opponentGuess', params);
     },
     nextTurn(game) {
       this.set('playersGuess', '');

@@ -13,17 +13,9 @@ export default Ember.Route.extend({
     enterRoom(room, game) {
       this.transitionTo('room', game.id, room.id);
     },
-    opponentGuess(who, where, how, game) {
-      var player = game.get('opponents').objectAt(game.get('turn'));
-      if (player.guesses !== undefined) {
-        player.guesses.push({who: who, where: where, how: how});
-
-      } else {
-        player.guesses = [{who: who, where: where, how: how}];
-
-      }
-      game.set('opponents', game.get('opponents'));
-      game.save();
+    opponentGuess(params) {
+      var newGuess = {who: params.who, where: params.where, how: params.how}
+      console.log(params.player.guesses);
     },
     nextTurn(game) {
       game.set('turn', game.get('turn')+1);
