@@ -10,31 +10,39 @@ export default Ember.Route.extend({
     });
   },
   actions: {
-    makeGuess(params) {
-      var newGuess = this.store.createRecord('guess', params);
-      var game = params.game;
+    makeGuess(params, game) {
+      var character = game.get('character')
+      var newGuess = {who: params.who, where: params.where, how: params.how}
+      character.guesses.push(newGuess);
       game.set('turn', 0);
       game.set('checkOrder', 0);
       game.save();
-      console.log(game.get('turn'));
-      newGuess.save().then(function() {
-        return game.save();
-      });
-      var cards, reveal = false, checker, gotReveal = false;
+      console.log(newGuess.who);
+      var cards = [], reveal = false, checker = null;
       while (!reveal) {
         checker = game.get('opponents').objectAt(game.get('checkOrder'));
         cards = checker.cards;
+
         for(var i = 0; i < cards.length; i++) {
-          if (cards[i] == newGuess.get('who') || cards[i] == newGuess.get('where') || cards[i] == newGuess.get('how')) {
+          if (cards[i] == newGuess.who || cards[i] == newGuess.where || cards[i] == newGuess.how) {
             reveal = cards[i];
+            game.get('checks').push({who: checker.name, reveal: reveal, to: character.name})
           }
         }
-        game.get('checks').push({who: checker, reveal: reveal, to: game.get('character')});
-        game.save();
-        debugger;
-        game.set('checkOrder', game.get('checkOrder') + 1);
-        game.save();
+        if (!reveal) {
+          game.get('checks').push({who: checker.name, reveal: false, to: character.name})
+        }
+        game.set('check-order', game.get('check-order') + 1)
       }
+      console.log(reveal);
+      this.transitionTo('board', game.id);
+
+      //   game.get('checks').push({who: checker, reveal: reveal, to: game.get('character')});
+      //   game.save();
+      //   debugger;
+      //   game.set('checkOrder', game.get('checkOrder') + 1);
+      //   game.save();
+      // }
       // var reveals = [], output = [], cards=[];
       // while (reveals.length == 0) {
       // var checker = game.get('opponents').objectAt(game.get('check-order'));

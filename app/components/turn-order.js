@@ -16,27 +16,10 @@ export default Ember.Component.extend({
       this.sendAction('enterRoom', room, game);
     },
     opponentGuess() {
-      var who, where, how, gotWho = false, gotWhere = false, gotHow = false;
+      var who, where, how;
       var game = this.get('model.game');
       var player = this.get('player');
-      while (!gotWho) {
-        who = this.get('model.suspects').objectAt(Math.floor(Math.random()*6)).get('name');
-        if (player.cards[0] !== who && player.cards[1] !== who && player.cards[2] !== who) {
-          gotWho = true;
-        }
-      }
-      while (!gotWhere) {
-        where = this.get('model.rooms').objectAt(Math.floor(Math.random()*6)).get('name');
-        if (player.cards[0] !== where && player.cards[1] !== where && player.cards[2] !== where) {
-          gotWhere = true;
-        }
-      }
-      while (!gotHow) {
-        how = this.get('model.weapons').objectAt(Math.floor(Math.random()*6)).get('name');
-        if (player.cards[0] !== how && player.cards[1] !== how && player.cards[2] !== how) {
-          gotHow = true;
-        }
-      }
+
       this.set('playersGuess', who + " in the " + where + " with the " + how);
       this.sendAction('opponentGuess', who, where, how, game);
     },

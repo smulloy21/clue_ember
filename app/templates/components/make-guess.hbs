@@ -1,40 +1,34 @@
-{{#if stillPlaying}}
-  <h1>{{model.room.name}}</h1>
-  {{#if guessForm}}
-    <h4>Guess:</h4>
-    <form>
-      <label>It was</label>
-      {{#x-select class="form-control" value=who id="who"}}
-        {{#x-option disabled}}Choose suspect{{/x-option}}
-         {{#each model.suspects as |suspect|}}
-           {{#x-option value=suspect.name}}{{suspect.name}}{{/x-option}}
-         {{/each}}
-       {{/x-select}}
-      <label>in the</label>
-      {{#x-select class="form-control" value=where id="where"}}
-        {{#x-option value=model.room.name}}{{model.room.name}}{{/x-option}}
-      {{/x-select}}
-      <label>with the</label>
-      {{#x-select class="form-control" value=how id="how"}}
-        {{#x-option disabled}}Choose weapon{{/x-option}}
-         {{#each model.weapons as |weapon|}}
-           {{#x-option value=weapon.name}}{{weapon.name}}{{/x-option}}
-         {{/each}}
-       {{/x-select}}
-      <button class="btn btn-default" {{action 'makeGuess'}}>Accuse</button>
-    </form>
-  {{else}}
-    {{#each model.game.checks as |check|}}
-      {{#if (eq check.reveal false)}}
-        <h3>{{check.who.name}} passed.</h3>
-      {{else}}
-        <h3>{{check.who.name}} showed you {{check.reveal}}.</h3>
-      {{/if}}
-    {{/each}}
-    {{#link-to 'board' model.game.id}}<button class="btn btn-default">Leave the {{model.room.name}}</button>{{/link-to}}
-  {{/if}}
+<h1>{{model.room.name}}</h1>
+{{#if guessForm}}
+  <h4>Guess:</h4>
+  <form col-xs-6>
+    <label>It was</label>
+    {{#x-select class="form-control" value=who id="who"}}
+      {{#x-option disabled}}Choose suspect{{/x-option}}
+       {{#each model.suspects as |suspect|}}
+         {{#x-option value=suspect.name}}{{suspect.name}}{{/x-option}}
+       {{/each}}
+     {{/x-select}}
+    <label>in the</label>
+    {{#x-select class="form-control" value=where id="where"}}
+      {{#x-option value=model.room.name}}{{model.room.name}}{{/x-option}}
+    {{/x-select}}
+    <label>with the</label>
+    {{#x-select class="form-control" value=how id="how"}}
+      {{#x-option disabled}}Choose weapon{{/x-option}}
+       {{#each model.weapons as |weapon|}}
+         {{#x-option value=weapon.name}}{{weapon.name}}{{/x-option}}
+       {{/each}}
+     {{/x-select}}
+    <button class="btn btn-default" {{action 'makeGuess'}}>Accuse</button>
+  </form>
 {{else}}
-  <h1>Congratulations, {{model.game.character.name}}, you solved the mystery. It was {{model.game.answer.who}} in the {{model.game.answer.where}} with the {{model.game.answer.how}}.</h1>
-  <h1>{{message}}</h1>
-  {{#link-to 'index'}}<button class="btn btn-default">Play again</button>{{/link-to}}
+  {{#each model.game.checks as |check|}}
+    {{#if (eq check.reveal false)}}
+      <h3>{{check.who.name}} passed.</h3>
+    {{else}}
+      <h3>{{check.who.name}} showed you {{check.reveal}}.</h3>
+    {{/if}}
+  {{/each}}
+  {{#link-to 'board' model.game.id}}<button class="btn btn-default">Leave the {{model.room.name}}</button>{{/link-to}}
 {{/if}}
